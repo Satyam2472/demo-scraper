@@ -1,5 +1,7 @@
 import streamlit as st
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -68,9 +70,11 @@ with st.container():
             except:
                 pass  # No popup found
             
-            sleep(2)
-            # Get the input elements
-            input_search = browser.find_element(By.CLASS_NAME, 'Pke_EE')
+            # sleep(2)
+            # # Get the input elements
+            # input_search = browser.find_element(By.CLASS_NAME, 'Pke_EE')
+            wait = WebDriverWait(browser, 10)  # Wait for up to 10 seconds
+            input_search = wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'Pke_EE')))
             search_button = browser.find_element(By.CSS_SELECTOR, '#container > div > div.q8WwEU > div > div > div > div > div:nth-child(1) > div > div > div > div._2nl6Ch > div._2NhoPJ > header > div._3ZqtNW > div._3NorZ0._3jeYYh > form > div > button > svg')
 
             # Send the input to the webpage
