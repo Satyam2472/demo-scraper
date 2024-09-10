@@ -65,7 +65,8 @@ with st.container():
                 close_popup.click()
             except:
                 pass  # No popup found
-
+            
+            sleep(2)
             # Get the input elements
             input_search = browser.find_element(By.CLASS_NAME, 'Pke_EE')
             search_button = browser.find_element(By.CSS_SELECTOR, '#container > div > div.q8WwEU > div > div > div > div > div:nth-child(1) > div > div > div > div._2nl6Ch > div._2NhoPJ > header > div._3ZqtNW > div._3NorZ0._3jeYYh > form > div > button > svg')
