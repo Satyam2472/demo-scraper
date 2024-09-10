@@ -27,7 +27,8 @@ options.add_argument("--headless")
 options.add_argument("--no-sandbox")  # Needed for some cloud environments
 options.add_argument("--disable-dev-shm-usage")  # May be needed for resource constraints
 
-
+# Specify the binary location explicitly (make sure this matches where Chrome is installed)
+options.binary_location = "/usr/bin/chromium-browser"  # or "/usr/bin/google-chrome"
 
 
 # Streamlit UI
